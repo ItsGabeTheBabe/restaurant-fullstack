@@ -21,7 +21,7 @@
         <div class="welcome-jumbo">
             <div class="status">NEW</div>
             <h1>Billy Burger</h1>
-            <img src="https://i.ya-webdesign.com/images/hamburger-and-fries-png-4.png" class="burger-fries">
+            <img src="img/hamburger-and-fries-png-4.png" class="burger-fries">
         </div>
     </section>
     @yield('content')
