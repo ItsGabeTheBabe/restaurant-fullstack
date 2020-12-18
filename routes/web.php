@@ -15,7 +15,7 @@ Route::get('/', 'StaticPagesController@home');
 Route::get('/menu', 'StaticPagesController@menu');
 Route::get('/menu/{slug}', 'StaticPagesController@singleMenu');
 Route::get('/about', 'StaticPagesController@about');
-Route::get('/waitlist', 'StaticPagesController@waitlist');
+Route::get('/reservations', 'StaticPagesController@reservations');
 Route::get('/contact', 'StaticPagesController@contact');
 Route::get('/offers', 'StaticPagesController@offers');
 
@@ -23,14 +23,18 @@ Route::get('/offers', 'StaticPagesController@offers');
 Route::get('/admin', 'admin\AdminController@dashboard');
 
 //admin food categories`
-Route::get('/admin/food-categories', 'admin\FoodCategoriesController@Index');
+Route::get('/admin/food-categories', 'admin\FoodCategoriesController@index');
 Route::get('/admin/food-categories/create', 'admin\FoodCategoriesController@create');
 Route::get('/admin/food-categories/{id}/edit', 'admin\FoodCategoriesController@edit');
 
 //admin food items`
-Route::get('/admin/food-items', 'admin\FoodItemsController@Index');
+Route::get('/admin/food-items', 'admin\FoodItemsController@index');
 Route::get('/admin/food-items/create', 'admin\FoodItemsController@create');
 Route::get('/admin/food-items/{id}/edit', 'admin\FoodItemsController@edit');
+
+//admin customers
+Route::get('/admin/offers-members', 'admin\CustomersController@allOffersMembers');
+Route::get('/admin/reservations', 'admin\CustomersController@allReservations');
 
 //admin authentication
 Route::get('/admin/register', function () {
@@ -39,10 +43,3 @@ Route::get('/admin/register', function () {
 Route::get('/admin/login', function () {
     return view('admin/login');
 });
-//Satic Pages
-Route::get('/menu', 'StaticPagesController@menu');
-Route::get('/menu/{slug}', 'StaticPagesController@singleMenu');
-Route::get('/about', 'StaticPagesController@about');
-Route::get('/waitlist', 'StaticPagesController@waitlist');
-Route::get('/contact', 'StaticPagesController@contact');
-Route::get('/offers', 'StaticPagesController@offers');

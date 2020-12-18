@@ -5,8 +5,16 @@
         <div class="content-box">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>Get On The List</h1>
+                    <h1>Reservation</h1>
                     <form>
+                        <div class="form-group">
+                            <label for="first-name-input">First Name</label>
+                            <input name="fname" type="text" class="form-control" id="first-name-input" placeholder="John">
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name-input">Last Name</label>
+                            <input name="lname" type="text" class="form-control" id="last-name-input" placeholder="Doe">
+                        </div>
                         <div class="form-group">
                             <label for="email-input">Email address</label>
                             <input type="email" class="form-control" name="email" id="email-input"
