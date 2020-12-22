@@ -8,7 +8,7 @@ class StaticPagesController extends Controller
 {
     public function home()
     {
-        return view('home');
+        return view('landing');
     }
     public function about()
     {
@@ -26,7 +26,7 @@ class StaticPagesController extends Controller
     {
         return view('pages/offers');
     }
-    public function nenu()
+    public function menu()
     {
         return view('menu/index');
     }
