@@ -18,7 +18,10 @@ class UsersController extends Controller
 
     public function index()
     {
-        return view('admin/users/all');
+        $users = User::paginate(10);
+        return view('admin/users/all', [
+            'users' => $users,
+        ]);
     }
     public function create()
     {
@@ -39,7 +42,7 @@ class UsersController extends Controller
 
         return redirect('/admin/users');
     }
-    public function save()
+    public function edit()
     {
         return view('admin/users/edit');
     }
