@@ -40,24 +40,24 @@
                             <div class="form-group">
                                 <label for="input-first-name">First Name</label>
                                 <input id="input-first-name" type="text"
-                                    class="form-control form-control-lg @error('input-first-name') is-invalid @enderror"
-                                    name="fname" value="{{ old('input-first-name') }}" required autocomplete="name"
-                                    autofocus placeholder="First Name">
+                                    class="form-control form-control-lg @error('fname') is-invalid @enderror" name="fname"
+                                    value="{{ old('fname') }}" required autocomplete="name" autofocus
+                                    placeholder="First Name">
 
-                                @error('input-first-name')
+                                @error('fname')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label for="input-last-name">Last Name</label>
-                                <input id="input-last-name" type="text"
-                                    class="form-control form-control-lg @error('input-last-name') is-invalid @enderror"
-                                    name="lname" value="{{ old('input-last-name') }}" required autocomplete="name" autofocus
+                                <label for="lname">Last Name</label>
+                                <input id="lname" type="text"
+                                    class="form-control form-control-lg @error('lname') is-invalid @enderror" name="lname"
+                                    value="{{ old('lname') }}" required autocomplete="name" autofocus
                                     placeholder="Last Name">
 
-                                @error('input-last-name')
+                                @error('lname')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -66,11 +66,10 @@
                             <div class="form-group">
                                 <label for="input-email">Email</label>
                                 <input id="input-email" type="email"
-                                    class="form-control form-control-lg @error('input-email') is-invalid @enderror"
-                                    name="email" value="{{ old('input-email') }}" required autocomplete="email"
-                                    placeholder="Email">
+                                    class="form-control form-control-lg @error('email') is-invalid @enderror" name="email"
+                                    value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
 
-                                @error('input-email')
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -79,10 +78,10 @@
                             <div class="form-group">
                                 <label for="input-password">Password</label>
                                 <input id="input-password" type="password"
-                                    class="form-control form-control-lg @error('input-password') is-invalid @enderror"
+                                    class="form-control form-control-lg @error('password') is-invalid @enderror"
                                     name="password" required autocomplete="new-password" placeholder="Enter Password">
 
-                                @error('input-password')
+                                @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
