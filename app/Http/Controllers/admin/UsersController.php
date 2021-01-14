@@ -37,6 +37,13 @@ class UsersController extends Controller
         $user->lname = request('lname');
         $user->email = request('email');
         $user->password = Hash::make(request('password'));
+        request()->validate([
+            'fname' => ['required', 'string', 'max:255'],
+            'lname' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'role_id' => ['required'],
+        ]);
         $user->save();
         $user->roles()->attach(request('role_id'));
 

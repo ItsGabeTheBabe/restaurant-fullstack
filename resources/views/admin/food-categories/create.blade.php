@@ -35,17 +35,46 @@
                 <div class="card">
                     <h5 class="card-header">Create A New Category</h5>
                     <div class="card-body">
-                        <form action="#" id="basicform" data-parsley-validate="">
+                        <form class="" method="POST" action="/admin/food-categories">
+                            @csrf
                             <div class="form-group">
-                                <label for="input-category">Category Name</label>
-                                <input id="input-category" type="text" name="category" data-parsley-trigger="change"
-                                    required="" placeholder="Enter Category Name" autocomplete="off" class="form-control">
+                                <label for="input-title">Title</label>
+                                <input id="input-title" type="text"
+                                    class="form-control form-control-lg @error('title') is-invalid @enderror" name="title"
+                                    value="{{ old('title') }}" required autocomplete="title" autofocus
+                                    placeholder="Enter Title">
+
+                                @error('title')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="form-group">
-                                <label for="input-category-img">Category Image Url</label>
-                                <input id="input-category-img" type="text" name="img-url" data-parsley-trigger="change"
-                                    required="" placeholder="Example: http://www.billys.com/img/burger.jpeg"
-                                    autocomplete="off" class="form-control">
+                                <label for="input-description">Description</label>
+                                <textarea id="input-description" type="text"
+                                    class="form-control form-control-lg @error('description') is-invalid @enderror"
+                                    name="description" required autocomplete="description" autofocus
+                                    placeholder="Description">{{ old('description') }}</textarea>
+
+                                @error('description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="input-image">Image URL</label>
+                                <input id="input-image" type="text"
+                                    class="form-control form-control-lg @error('image_url') is-invalid @enderror"
+                                    name="image_url" value="{{ old('image_url') }}" required autocomplete="image_url"
+                                    autofocus placeholder="Enter Image URL">
+
+                                @error('image_url')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
@@ -67,3 +96,7 @@
 
     </div>
 @endsection
+
+{{--
+src="https://img.pngio.com/sprite-png-transparent-images-png-all-sprite-soda-png-2560_1160.png"
+--}}
