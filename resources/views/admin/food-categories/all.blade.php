@@ -57,7 +57,7 @@
                                         </td>
                                         <td>
                                             <a href="/admin/food-categories/{{ $category->id }}/delete"
-                                                onclick="if (! confirm('Are you sure you want to delete this user?')) { return false; }">
+                                                onclick="if (! confirm('Are you sure you want to delete this category?')) { return false; }">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
                                         </td>

@@ -61,6 +61,8 @@ class FoodItemsController extends Controller
         request()->validate([
             'title' => ['required', 'string', 'max:255'],
             'description' => ['required', 'string'],
+            'price' => ['required'],
+            'category_id' => ['required', 'integer'],
         ]);
 
         $item = FoodItem::find($id);

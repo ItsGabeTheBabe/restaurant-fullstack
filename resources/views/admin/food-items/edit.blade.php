@@ -35,14 +35,14 @@
                 <div class="card">
                     <h5 class="card-header">Edit This Item</h5>
                     <div class="card-body">
-                        <form class="" method="POST" action="/admin/food-items">
+                        <form class="" method="POST" action="/admin/food-items/{{ $item->id }}">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 <label for="input-title">Title</label>
                                 <input id="input-title" type="text"
                                     class="form-control form-control-lg @error('title') is-invalid @enderror" name="title"
-                                    value="{{ old('title') }}" required autocomplete="title" autofocus
+                                    value="{{ old('title', $item->title) }}" required autocomplete="title" autofocus
                                     placeholder="Enter Title">
 
                                 @error('title')
@@ -55,8 +55,8 @@
                                 <label for="input-image">Image URL</label>
                                 <input id="input-image" type="text"
                                     class="form-control form-control-lg @error('image_url') is-invalid @enderror"
-                                    name="image_url" value="{{ old('image_url') }}" autocomplete="image_url" autofocus
-                                    placeholder="Enter Image URL">
+                                    name="image_url" value="{{ old('image_url', $item->image_url) }}"
+                                    autocomplete="image_url" autofocus placeholder="Enter Image URL">
 
                                 @error('image_url')
                                     <span class="invalid-feedback" role="alert">
@@ -68,7 +68,10 @@
                                 <label for="input-category">Category</label>
                                 <select class="form-control" id="input-category" name='category_id'>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                        <option value="{{ $category->id }}" @if ($category->id == $item->category_id)
+                                            selected
+                                    @endif
+                                    >{{ $category->title }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -77,7 +80,7 @@
                                 <textarea id="input-description" type="text"
                                     class="form-control form-control-lg @error('description') is-invalid @enderror"
                                     name="description" required autocomplete="description" autofocus
-                                    placeholder="Description">{{ old('description') }}</textarea>
+                                    placeholder="Description">{{ old('description', $item->description) }}</textarea>
 
                                 @error('description')
                                     <span class="invalid-feedback" role="alert">
@@ -89,7 +92,7 @@
                                 <label for="input-price">Price</label>
                                 <input id="input-price" type="text"
                                     class="form-control form-control-lg @error('price') is-invalid @enderror" name="price"
-                                    value="{{ old('price') }}" required autocomplete="title" autofocus
+                                    value="{{ old('price', $item->price) }}" required autocomplete="title" autofocus
                                     placeholder="Enter Price">
 
                                 @error('price')
