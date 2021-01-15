@@ -53,12 +53,7 @@
                                         <td>{{ $member->phone_number }}</td>
                                         <td>{{ date('m/d/y', strtotime($member->updated_at)) }}</td>
                                         <td>
-                                            <a href="/admin/food-members/{{ $member->id }}/edit">
-                                                <i class="far fa-edit"></i>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="/admin/food-members/{{ $member->id }}/delete"
+                                            <a href="/admin/members/{{ $member->id }}/delete"
                                                 onclick="if (! confirm('Are you sure you want to delete this member?')) { return false; }">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
@@ -67,6 +62,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        {{ $members->links() }}
                     </div>
                 </div>
             </div>
