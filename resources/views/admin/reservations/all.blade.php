@@ -42,20 +42,38 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">Guests Total</th>
+                                    <th scope="col">Time</th>
                                     <th scope="col">Date Created</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Gabriel Torres</td>
-                                    <td>GabeTorres@gmail.com</td>
-                                    <td>(555) 777-333</td>
-                                    <td>4</td>
-                                    <td>2/2/2020</td>
-                                </tr>
+                                @foreach ($reservations as $reservation)
+                                    <tr>
+                                        <th scope="row">{{ $reservation->id }}</th>
+                                        <td>{{ $reservation->fname }} {{ $reservation->lname }}</td>
+                                        <td>{{ $reservation->email }}</td>
+                                        <td>{{ $reservation->phone_number }}</td>
+                                        <td>{{ $reservation->guests_total }}</td>
+                                        <td>{{ $reservation->time }}</td>
+                                        <td>{{ date('m/d/y', strtotime($reservation->updated_at)) }}</td>
+                                        <td>
+                                            <a href="/admin/reservations/{{ $reservation->id }}/edit">
+                                                <i class="far fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a href="/admin/reservations/{{ $reservation->id }}/delete"
+                                                onclick="if (! confirm('Are you sure you want to delete this reservation?')) { return false; }">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
+                        {{ $reservations->links() }}
                     </div>
                 </div>
             </div>
