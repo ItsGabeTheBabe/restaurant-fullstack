@@ -24,7 +24,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2"
-                        aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Settings</a>
+                        aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Menu</a>
                     <div id="submenu-2" class="collapse submenu" style="">
                         <ul class="nav flex-column">
                             <li class="nav-item">
@@ -114,11 +114,19 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5"
-                        aria-controls="submenu-5"><i class="fa fa-fw fa-rocket"></i>Menu</a>
+                        aria-controls="submenu-5"><i class="fa fa-fw fa-rocket"></i>Settings</a>
                     <div id="submenu-5" class="collapse submenu" style="">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="pages/cards.html">General Settings <span
+                                <a class="nav-link" href="/admin/settings/general">General Settings<span
+                                        class="badge badge-secondary">New</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/settings/seo">SEO<span
+                                        class="badge badge-secondary">New</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/admin/settings/social">Social<span
                                         class="badge badge-secondary">New</span></a>
                             </li>
                         </ul>
