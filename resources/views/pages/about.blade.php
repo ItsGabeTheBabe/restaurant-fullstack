@@ -1,5 +1,18 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $settings['general']->site_title }} | About Us
+@endsection
+
+@section('description')
+    Every day, more than 11 million guests visit Billy's Burgers restaurants around the world. And they do so because our
+    restaurants are known for serving high-quality, great-tasting, and affordable food. Founded in 1954, Billy's Burgers is
+    the
+    second largest fast food hamburger chain in the world. The original Home of the Whopper, our commitment to premium
+    ingredients, signature recipes, and family-friendly dining experiences is what has defined our brand for more than 50
+    successful years.
+@endsection
+
 @section('content')
     <div id="about-page">
         <div class="content-box">

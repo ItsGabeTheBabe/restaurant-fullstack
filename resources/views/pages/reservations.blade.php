@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $settings['general']->site_title }} | Reservations
+@endsection
+
+@section('description')
+    Avoid the wait and book a time and date with us now!
+@endsection
+
 @section('content')
     <div id="waitlist-page">
         <div class="content-box">

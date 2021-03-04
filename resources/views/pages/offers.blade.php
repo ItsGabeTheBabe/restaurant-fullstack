@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $settings['general']->site_title }} | Offers
+@endsection
+
+@section('description')
+    Sign up for special deals and offers with our Member's Program
+@endsection
+
 @section('content')
     <div id="offers-page">
         <div class="content-box">
