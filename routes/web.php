@@ -29,6 +29,7 @@ Route::get('/offers/thank-you', 'StaticPagesController@thankYou');
 
 //admin dashboard
 Route::get('/admin', 'admin\AdminController@dashboard');
+Route::get('/admin/estimated-revenue-daily', 'admin\AdminController@DailyRevenueLast30');
 
 //admin food categories
 Route::get('/admin/food-categories', 'admin\FoodCategoriesController@index')
