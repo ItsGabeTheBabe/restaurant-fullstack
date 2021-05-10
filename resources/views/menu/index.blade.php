@@ -17,147 +17,23 @@
                 </div>
                 <div class="food-slider">
                     <div class="sliding-system">
-                        <div class="slide">
-                            <div class="background"></div>
-                            <div class="content">
-                                <div class="food-title">
-                                    Starters
+                        @foreach ($categories as $category)
+                            <a href="/menu/{{ $category->title }}" class="slide">
+                                <div class="background"></div>
+                                <div class="content">
+                                    <div class="food-title">
+                                        {{ $category->title }}
+                                    </div>
+                                    <p class="food-description">
+                                        {{ $category->description }}}
+                                    </p>
+                                    <div class="food-image">
+                                        <img src="{{ $category->image_url }}">
+                                    </div>
                                 </div>
-                                <p class="food-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis iste ab deleniti
-                                    cupiditate
-                                    architecto
-                                    officia aspernatur nulla iusto delectus doloremque possimus recusandae, reiciendis
-                                    aliquam vel voluptas
-                                    repellendus natus nihil?
-                                </p>
-                                <div class="food-image">
-                                    <img src="https://taco.sfo2.digitaloceanspaces.com/2019/04/CHIPS.png">
-                                </div>
-                            </div>
 
-                        </div>
-                        <div class="slide">
-                            <div class="background"></div>
-                            <div class="content">
-                                <div class="food-title">
-                                    Burgers
-                                </div>
-                                <p class="food-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis iste ab deleniti
-                                    cupiditate
-                                    architecto
-                                    officia aspernatur nulla iusto delectus doloremque possimus recusandae, reiciendis
-                                    aliquam vel voluptas
-                                    repellendus natus nihil?
-                                </p>
-                                <div class="food-image">
-                                    <img src="https://i.ya-webdesign.com/images/hamburger-and-fries-png-4.png">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="slide">
-                            <div class="background"></div>
-                            <div class="content">
-                                <div class="food-title">
-                                    Entrees
-                                </div>
-                                <p class="food-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis iste ab deleniti
-                                    cupiditate
-                                    architecto
-                                    officia aspernatur nulla iusto delectus doloremque possimus recusandae, reiciendis
-                                    aliquam vel voluptas
-                                    repellendus natus nihil?
-                                </p>
-                                <div class="food-image">
-                                    <img src="https://www.pngkey.com/png/full/342-3422633_pork-entrees-steak-pork-png.png">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="slide">
-                            <div class="background"></div>
-                            <div class="content">
-                                <div class="food-title">
-                                    Sides
-                                </div>
-                                <p class="food-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis iste ab deleniti
-                                    cupiditate
-                                    architecto
-                                    officia aspernatur nulla iusto delectus doloremque possimus recusandae, reiciendis
-                                    aliquam vel voluptas
-                                    repellendus natus nihil?
-                                </p>
-                                <div class="food-image">
-                                    <img
-                                        src="https://pngriver.com/wp-content/uploads/2018/04/Download-Salad-Transparent-PNG.png">
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="slide">
-                            <div class="background"></div>
-                            <div class="content">
-                                <div class="food-title">
-                                    Deserts
-                                </div>
-                                <p class="food-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis iste ab deleniti
-                                    cupiditate
-                                    architecto
-                                    officia aspernatur nulla iusto delectus doloremque possimus recusandae, reiciendis
-                                    aliquam vel voluptas
-                                    repellendus natus nihil?
-                                </p>
-                                <div class="food-image">
-                                    <img
-                                        src="https://pngriver.com/wp-content/uploads/2018/04/Download-Cupcake-PNG-Transparent-Image-420x190.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="background"></div>
-                            <div class="content">
-                                <div class="food-title">
-                                    Beers
-                                </div>
-                                <p class="food-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis iste ab deleniti
-                                    cupiditate
-                                    architecto
-                                    officia aspernatur nulla iusto delectus doloremque possimus recusandae, reiciendis
-                                    aliquam vel voluptas
-                                    repellendus natus nihil?
-                                </p>
-                                <div class="food-image">
-                                    <img
-                                        src="https://pngriver.com/wp-content/uploads/2018/04/Download-Cupcake-PNG-Transparent-Image-420x190.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="background"></div>
-                            <div class="content">
-                                <div class="food-title">
-                                    Drinks
-                                </div>
-                                <p class="food-description">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis iste ab deleniti
-                                    cupiditate
-                                    architecto
-                                    officia aspernatur nulla iusto delectus doloremque possimus recusandae, reiciendis
-                                    aliquam vel voluptas
-                                    repellendus natus nihil?
-                                </p>
-                                <div class="food-image">
-                                    <img
-                                        src="https://pngriver.com/wp-content/uploads/2018/04/Download-Cupcake-PNG-Transparent-Image-420x190.png">
-                                </div>
-                            </div>
-                        </div>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
