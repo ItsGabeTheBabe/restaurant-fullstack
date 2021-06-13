@@ -187,11 +187,22 @@ table {
   margin-bottom: 2.5rem;
 }
 
+#contact-page h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
 #contact-page p {
   font-size: 0.9rem;
   line-height: 2;
   margin-bottom: 2rem;
   font-weight: 500;
+}
+
+#contact-page iframe {
+  width: 100%;
 }
 
 @media (min-width: 0px) and (max-width: 767px) {
@@ -725,6 +736,7 @@ body {
 #food-preview .food-slider .sliding-system {
   white-space: nowrap;
   transform: translate3d(0%, 0, 0);
+  transition: all 0.3s ease-in-out;
 }
 
 #food-preview .food-slider .slide {
@@ -845,8 +857,17 @@ h2 {
 
   #food-preview {
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
     padding: 20px;
+  }
+
+  #food-preview .food-slider .slide {
+    margin-bottom: 1rem;
+  }
+
+  #food-preview .food-slider .sliding-system {
+    white-space: normal;
+    transform: translate3d(0%, 0, 0);
   }
 
   #food-preview .button-rounded {
@@ -855,10 +876,12 @@ h2 {
 
   #food-preview .container .left-btn {
     left: -20px;
+    display: none;
   }
 
   #food-preview .container .right-btn {
     right: -20px;
+    display: none;
   }
 
   #food-preview h2 {
@@ -910,7 +933,6 @@ h2 {
 
   #information #food-preview {
     width: 100%;
-    overflow: hidden;
     padding: 20px;
   }
 

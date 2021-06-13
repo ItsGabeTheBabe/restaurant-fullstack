@@ -286,6 +286,7 @@ body {
         .sliding-system {
             white-space: nowrap;
             transform: translate3d(-0%, 0, 0);
+            transition: all 0.3s ease-in-out;
         }
         .slide {
             width: 20%;
@@ -399,17 +400,28 @@ h2 {
     }
     #food-preview {
         width: 100%;
-        overflow: hidden;
+        overflow: auto;
         padding: 20px;
+        .food-slider {
+            .slide {
+                margin-bottom: 1rem;
+            }
+            .sliding-system {
+                white-space: normal;
+                transform: translate3d(-0%, 0, 0);
+            }
+        }
         .button-rounded {
             margin-bottom: 2rem;
         }
         .container {
             .left-btn {
                 left: -20px;
+                display: none;
             }
             .right-btn {
                 right: -20px;
+                display: none;
             }
         }
         h2 {
@@ -460,7 +472,7 @@ h2 {
         }
         #food-preview {
             width: 100%;
-            overflow: hidden;
+            // overflow: hidden;
             padding: 20px;
             .button-rounded {
                 margin-bottom: 2rem;
