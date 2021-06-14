@@ -104,7 +104,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 View::composer([
     'home', 'pages/about', 'pages/contact',
-    'pages/offers', 'pages/reservations', 'thank-you',
+    'pages/offers', 'pages/reservations', 'pages/thank-you',
     'menu/index', 'menu/single-menu'
 ], function ($view) {
     $generalSettings = GeneralSetting::find(1);
