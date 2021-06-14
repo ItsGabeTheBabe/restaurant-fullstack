@@ -74,12 +74,12 @@ class AdminController extends Controller
         //     group by reserved_day desc
         // '));
         return $estimated_income_daily_data = DB::select(DB::raw('
-        SELECT
-            DATE_FORMAT(created_at,"%Y-%m-%d") as x,
-            (sum(guests_total)*27) as y,
-            sum(guests_total)
+        SELECT 
+                DATE_FORMAT(created_at,"%Y-%m-%d") as x,
+                (sum(guest_total)*27) as y
             FROM reservations
-            group by x desc
+            GROUP BY x 
+            ORDER BY x DESC;
         '));
     }
 }
