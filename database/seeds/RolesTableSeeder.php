@@ -30,13 +30,8 @@ class RolesTableSeeder extends Seeder
             'user_id' => 1,
         ]);
 
-        DB::table('role_user')->insert([
-            'role_id' => 2,
-            'user_id' => 2,
-        ]);
-
         $faker = Faker::create();
-        foreach (range(3, 20) as $index) {
+        foreach (range(2, 20) as $index) {
             DB::table('role_user')->insert([
                 'role_id' => rand(1, 2),
                 'user_id' => $index,

@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Database\Seeder;
@@ -20,18 +19,18 @@ class UsersTableSeeder extends Seeder
             'email' => 'Admin@gmail.com',
             'password' => Hash::make('12345678'),
             'updated_at' => Carbon::now(),
-            'created_at' => Carbon::now(),
+            'created_at' => Carbon::now()
         ]);
 
         $faker = Faker::create();
-        foreach (range(1, 18) as $index) {
+        foreach (range(2, 20) as $index) {
             DB::table('users')->insert([
                 'fname' => $faker->firstName,
                 'lname' => $faker->lastName,
-                'email' => $faker->safeEmail,
+                'email' => $faker->email,
                 'password' => Hash::make('12345678'),
-                'updated_at' => $faker->dateTimeThisMonth('now', 'America/Los_Angeles'),
-                'created_at' => $faker->dateTimeThisMonth('now', 'America/Los_Angeles'),
+                'updated_at' => $faker->dateTimeThisMonth('now', 'America/New_York'),
+                'created_at' => $faker->dateTimeThisMonth('now', 'America/New_York')
             ]);
         }
     }
