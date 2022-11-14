@@ -78,8 +78,7 @@ class AdminController extends Controller
                 DATE_FORMAT(created_at,"%Y-%m-%d") as x, 
                 (sum(guests_total) * 27 ) as y
             FROM reservations
-            group by x
-            ORDER BY x desc;
+            group by x;
         '));
     }
 }
